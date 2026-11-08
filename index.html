@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INDIA SHORTS</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #101010;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+header {
+  background: #e60023;
+  padding: 18px;
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  background: #222;
+  padding: 15px 5px;
+}
+nav button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 15px;
+}
+.container {
+  padding: 18px;
+}
+h2 {
+  margin-bottom: 15px;
+}
+.card {
+  background: #242424;
+  padding: 18px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+.upload {
+  background: #e60023;
+  border: none;
+  color: white;
+  padding: 13px;
+  width: 100%;
+  border-radius: 8px;
+  font-size: 17px;
+  margin-top: 12px;
+}
+.video {
+  background: #333;
+  height: 230px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  font-size: 22px;
+}
+.stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px 0;
+}
+input {
+  width: 100%;
+  padding: 13px;
+  margin: 8px 0;
+  border-radius: 7px;
+  border: none;
+}
+</style>
+</head>
+
+<body>
+
+<header>🇮🇳 INDIA SHORTS</header>
+
+<nav>
+<button onclick="show('home')">Home</button>
+<button onclick="show('upload')">Upload</button>
+<button onclick="show('profile')">Profile</button>
+<button onclick="show('earning')">Earning</button>
+</nav>
+
+<div class="container">
+
+<section id="home">
+<h2>Welcome to INDIA SHORTS</h2>
+<div class="card">
+<div class="video">▶ INDIA SHORTS</div>
+<h3>Short Videos</h3>
+<p>Watch and enjoy short videos.</p>
+<div class="stats">
+<span>❤️ <span id="likes">0</span></span>
+<span>👁 0 Views</span>
+<span>💬 0 Comments</span>
+</div>
+<button class="upload" onclick="like()">❤️ Like</button>
+</div>
+</section>
+
+<section id="upload" hidden>
+<h2>Upload Video</h2>
+<div class="card">
+<input type="file" accept="video/*" id="videoFile">
+<button class="upload" onclick="uploadVideo()">Upload Video</button>
+<p id="uploadStatus"></p>
+</div>
+</section>
+
+<section id="profile" hidden>
+<h2>Creator Profile</h2>
+<div class="card">
+<h3>Creator Account</h3>
+<p>Name: Creator</p>
+<p>Platform: INDIA SHORTS</p>
+<p>Followers: 0</p>
+</div>
+</section>
+
+<section id="earning" hidden>
+<h2>Creator Earning</h2>
+<div class="card">
+<h3>My Dashboard</h3>
+<p>Total Views: 0</p>
+<p>Pending Earning: ₹0</p>
+<p>Withdrawable Balance: ₹0</p>
+<p>Note: वास्तविक कमाई के लिए सर्वर और भुगतान सिस्टम जरूरी है।</p>
+</div>
+</section>
+
+</div>
+
+<script>
+function show(section) {
+  document.querySelectorAll('.container section')
+  .forEach(s => s.hidden = true);
+  document.getElementById(section).hidden = false;
+}
+
+let count = 0;
+function like() {
+  count++;
+  document.getElementById('likes').innerText = count;
+}
+
+function uploadVideo() {
+  const file = document.getElementById('videoFile').files[0];
+  document.getElementById('uploadStatus').innerText =
+    file ? "Video selected: " + file.name :
+    "Please select a video first.";
+}
+</script>
+
+</body>
+</html>
