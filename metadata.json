@@ -1,0 +1,6 @@
+{
+  "name": "INDIA SHORTS",
+  "description": "Global video sharing platform created by Kokil Murmu featuring Shorts, creator monetization, and official owner dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
